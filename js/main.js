@@ -83,3 +83,37 @@ themeButton.addEventListener('click', () => {
   localStorage.setItem('selected-theme', getCurrentTheme());
   localStorage.setItem('selected-icon', getCurrentIcon());
 });
+
+// reduce the size and print on a4 sheet
+function scaleCv() {
+  document.body.classList.add('scale-cv');
+}
+
+function removeScale() {
+  document.body.classList.remove('scale-cv');
+}
+
+//generate pdf
+
+let opt = {
+  margin: 0,
+  filename: 'myResume.pdf',
+  image: { type: 'jpeg', quality: 0.98 },
+  html2canvas: { scale: 4 },
+  jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+};
+
+let areaCv = document.getElementById('area-cv');
+
+function generateResume() {
+  html2pdf(areaCv, opt);
+}
+
+let resumeButton = document.getElementById('resume-button');
+resumeButton.addEventListener('click', () => {
+  scaleCv();
+
+  generateResume();
+
+  setTimeout(removeScale, 5000);
+});
