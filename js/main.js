@@ -27,6 +27,7 @@ function scrollActive() {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
     const sectionId = current.getAttribute('id');
+    // console.log(sectionId);
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
@@ -97,7 +98,7 @@ function removeScale() {
 
 let opt = {
   margin: 0,
-  filename: 'myResume.pdf',
+  filename: 'myResume1.pdf',
   image: { type: 'jpeg', quality: 0.98 },
   html2canvas: { scale: 4 },
   jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
