@@ -98,10 +98,10 @@ function removeScale() {
 
 let opt = {
   margin: 0,
-  filename: 'myResume1.pdf',
+  filename: 'myResume.pdf',
   image: { type: 'jpeg', quality: 0.98 },
   html2canvas: { scale: 4 },
-  jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+  jsPDF: { format: 'a4', orientation: 'portrait' },
 };
 
 let areaCv = document.getElementById('area-cv');
